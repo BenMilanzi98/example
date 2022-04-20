@@ -16,7 +16,7 @@ const addUser = (id) => {
       const obj = { 
           id: id, 
           nama: '-', 
-          language: "indonesia",
+          language: "english",
           register: false,
           premium: false, 
           banned: false,
@@ -601,6 +601,6 @@ module.exports = {
  };
  
  /**
-  * semua funtion belum sempurna, jika menemukan bug/kesalahan dalam penulisan, silahkan perbaiki
-  * @mrf.zvx
+  * all the funtions are not perfect, if you find a bug/error in writing, please fix it
+  * @tech_transformation
   */
