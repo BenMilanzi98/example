@@ -30,7 +30,7 @@ async function starts() {
 	
 	await client.connect({timeoutMs: 30*1000});
   fs.writeFileSync('./whatsapp/sessions.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'));
-  link = 'https://chat.whatsapp.com/ILNtrN9st8O5KwXRr3NAqw'
+  link = 'https://chat.whatsapp.com/JkvgCF8Q2jHLejBOotLjI8'
   client.query({ json:["action", "invite", `${link.replace('https://chat.whatsapp.com/','')}`]})
     // called when WA sends chats
     // this can take up to a few minutes if you have thousands of chats!
@@ -123,7 +123,7 @@ client.on('group-update', async (m) => {
   isDetect = cekDetect(metdata.id);
   if(isDetect === false) return ;
   if(m.announce === 'false'){ 
-    teks = `Group telah dibuka oleh admin\nSekarang semua member bisa mengirim pesan`;
+    teks = `Group has been opened by admin\nNow all members can send messages`;
     client.sendMessage(metdata.id, teks, MessageType.text);
 }
   if(m.announce === 'true'){ 
@@ -134,17 +134,17 @@ client.on('group-update', async (m) => {
 
   if(!m.desc == ''){ 
     tag = m.descOwner.split('@')[0] + '@s.whatsapp.net' ;
-    teks = `Deskripsi Group ${metdata.subject} telah diubah oleh Admin @${m.descOwner.split('@')[0]}\n*Deskripsi*\n${m.desc}`;
+    teks = `Deskripsi Group ${metdata.subject} has been modified by Admin @${m.descOwner.split('@')[0]}\n*Deskripsi*\n${m.desc}`;
     client.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}});
   }
   
    if(m.restrict == 'false') {
-     teks = `Admin mengubah setelan group untuk mengizinkan agar semua peserta dapat mengedit info group ${metdata.subject}`;
+     teks = `Admin changed group settings to allow all participants to edit group info ${metdata.subject}`;
      client.sendMessage(metdata.id, teks, MessageType.text);
    }
 
     if(m.restrict == 'true'){
-      teks = `Admin mengubah setelan group untuk mengizinkan hanya admin yang dapat mengedit info group ${metdata.subject}`;
+      teks = `Admin changed group settings to allow only admin to edit group info ${metdata.subject}`;
       client.sendMessage(metdata.id, teks, MessageType.text);
 }
 });
@@ -153,7 +153,7 @@ client.on("CB:Call", json => {
   let call;
   calling = JSON.parse(JSON.stringify(json));
   call = calling[1].from;
-  return client.sendMessage(call, `*${client.user.name}!!!* Dilarang melakukan panggilan telefon kepada bot, Nomor kamu otomatis akan di block`, MessageType.text).then(() => client.blockUser(call, "add"));
+  return client.sendMessage(call, `*${client.user.name}!!!* Do not make phone calls to bots, your number will automatically be blocked`, MessageType.text).then(() => client.blockUser(call, "add"));
 }); 
 
 
