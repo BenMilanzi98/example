@@ -61,7 +61,7 @@
     "start": "node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ma'ruf",
+  "author": "BenMilanzi",
   "license": "MIT license",
   "bugs": {
     "url": "https://github.com/psychoben98/example//issues"
