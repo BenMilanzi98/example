@@ -11,23 +11,23 @@ async function ArtiMimpi(mimpi) {
         const detect = $('#body > font > i').text();
         const isAva = /Tidak ditemukan/g.test(detect) ? false : true;
         if (isAva) {
-          const isi = $('#body').text().split(`Hasil pencarian untuk kata kunci: ${mimpi}`)[1].replace(/\n\n\n\n\n\n\n\n\n/gi, '\n').replace(`Solusi - Menanggulangi akibat dari tafsir mimpi yang buruk
-      Jika anda bermimpi sesuatu yang dapat berakibat buruk bagi anda dan keluarga 
-      (seperti mimpi gigi copot dll) anda di harapkan melakukan hal-hal sebagai 
-      berikut untuk menanggulanginya:
-      Ambillah sapu lidi (bisa juga tusuk gigi, bambu kecil dll). Lalu potong 
-      atau patahkan dengan tangan anda menjadi 7 (tujuh) batang, kecil-kecil, 
-      kira-kira 3 sentimeter. Sediakan selembar kertas atau tissue. Siapkan 
-      garam dapur, sedikit saja. Taruhlah potongan ke tujuh sapu lidi dan garam 
-      dapur tadi ke dalam tissue atau kertas. Lipat kertas tersebut dan kuburkan 
-      ke dalam tanah (pekarangan, halaman rumah anda). Kalimat yang anda harus 
-      ucapkan ketika akan mengubur/membenam kertas (yang berisi 7 potong sapu 
-      lidi dan garam) tersebut adalah kalimat yang meminta kepada Yang Maha 
-      Kuasa agar di jauhi dari akibat buruk mimpi anda.
-      Contoh kalimat:"Ya Tuhan.. Jauhkanlah saya dan keluarga saya dari 
-      malapetaka. Tidak akan tumbuh/jadi, garam yang saya kubur ini. Seperti 
-      halnya mimpi saya yang dapat berakibat buruk bagi kami tidak akan menjadi 
-      kenyataan atau tidak akan terjadi. Amien.."
+          const isi = $('#body').text().split(`Hasil pencarian untuk kata kunci: ${mimpi}`)[1].replace(/\n\n\n\n\n\n\n\n\n/gi, '\n').replace(`Solution - Coping with the consequences of bad dream interpretation
+      if you dream something that can be bad for you and your family
+      (such as dreams of missing teeth etc.) you are expected to do things as
+      the following to solve it:
+      Take a broom stick (can also toothpicks, small bamboo, etc.). Then cut
+      or break with your hands into 7 (seven) sticks, small,
+      about 3 centimeters. Provide a piece of paper or tissue. Prepare
+      table salt, just a little. Put the pieces of the seven broom sticks and salt
+      the kitchen into a tissue or paper. Fold the paper and bury it
+      into the ground (yard, yard). Sentences you must
+      say it when going to bury / bury the paper (which contains 7 pieces of brooms
+      sticks and salt) is a sentence that asks the Almighty
+      The power to stay away from the bad consequences of your dreams.
+      Example sentences: "Oh my God.. Keep me and my family away from
+      catastrophe. Will not grow, this salt I bury. As
+      just like my dream that can be bad for us won't come true
+      reality or not. Amen.."
 
 
 
@@ -46,7 +46,7 @@ async function ArtiMimpi(mimpi) {
         } else {
           const res = {
             status: 404,
-            result: `Arti Mimpi ${mimpi} Tidak Di Temukan`
+            result: `Dream Meaning ${mimpi} Not found`
           };
           resolve(res);
         }
