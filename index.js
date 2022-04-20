@@ -277,19 +277,19 @@ module.exports = client = async (client, mek) => {
      
           // -- bahasa
      if (msg === "indonesia") {
-       msg = ind;
+       msg = eng;
      } else if (msg === "english") {
        msg = eng;
      } else if (msg === "jawa") {
-       msg = jv;
+       msg = eng;
      } else if (msg === "sunda") {
-       msg = snd;
+       msg = eng;
      } else if (msg === "arab") {
-       msg = ar;
+       msg = eng;
      } else if (msg === "portugis") {
-       msg = prtgs;
+       msg = eng;
      } else {
-       msg = ind;
+       msg = eng;
      }
 
      /** Ucapan waktu menurut Timezone 
@@ -391,7 +391,7 @@ for ( var L of lexa){
     lari = fs.readFileSync('./database/media/sticker/lari.webp')
    //return client.sendMessage(from, lari, sticker, {quoted: mek})
    capt = 'Hai @'+sender.split('@')[0]+' Lexa disini'
-   return client.send2ButtonLoc(from, thumb, capt, 'Klik button untuk menampilkan menu dan informasi', 'Menu', prefix + 'menu', 'Informasi', prefix + 'informasi', false, {
+   return client.send2ButtonLoc(from, thumb, capt, 'Click the button to display the menu and information', 'Menu', prefix + 'menu', 'Informasi', prefix + 'informasi', false, {
           contextInfo: {
             mentionedJid: client.parseMention(capt),
           },
@@ -449,7 +449,7 @@ switch (command) {
  
   case 'restart': // restart bot !!
     if(!isOwner) return m.reply(msg.owner)
-    m.reply('Restart bot, proses membutuhkan waktu kurang dari 1 menit, silahkan tunggu')
+    m.reply('Restart the bot, the process takes less than 1 minute, please wait')
     try {
       process.send('reset')
     } catch (e) {
@@ -540,11 +540,11 @@ break
   
   case 'owner':
   case 'author':
-    number = '6282223014661@s.whatsapp.net'
+    number = '265884032588@s.whatsapp.net'
     capt = `Nomor : @${number.split('@')[0]}\n`
-    capt += 'Instagram : https://www.instagram.com/mrf.zvx'
-    await client.fakeLink(from, capt, thumb, 'Click in here', 'https://www.instagram.com/mrf.zvx', mek)
-   /* client.sendContact(from, '6282223014661', 'owner', {
+    capt += 'Instagram : https://www.instagram.com/tech_transformation'
+    await client.fakeLink(from, capt, thumb, 'Click in here', 'https://www.instagram.com/tech_transformation', mek)
+   /* client.sendContact(from, '265884032588', 'owner', {
 	 key: {
           fromMe: false,
 	      participant: `0@s.whatsapp.net`, ...(from ? 
@@ -552,7 +552,7 @@ break
                 },
 	 message: { 
 		"extendedTextMessage": {
-                 "text":"Nih owner ku"
+                 "text":"BenMilanzi"
                         }
 	                  }})*/
     break
@@ -597,13 +597,13 @@ break
 - Versi Browser : *${client.browserDescription[2]}*
 
 *OWNER*
-- Instagram : https://www.instagram.com/mrf.zvx
-- WhatsApp : wa.me/6282223014661
+- Instagram : https://www.instagram.com/tech_transformation
+- WhatsApp : wa.me/265884032588
 
 *SCRIPT*
 - Git : ${package.homepage}
 - License : ${package.license}` 
-  client.fakeLink(from, teks, thumb, tanggal, 'https://www.instagram.com/mrf.zvx', mek)
+  client.fakeLink(from, teks, thumb, tanggal, 'https://www.instagram.com/tech_transformation', mek)
    break
     
  case 'namaninja':
@@ -717,7 +717,7 @@ break
   case 'kapankah':
     if(!value) return m.reply(msg.notext)
     No = Math.floor(Math.random() * 30)
-    Apa = ["Jam lagi","Hari lagi","Minggu lagi","Bulan lagi","Tahun lagi"]
+    Apa = ["Another hour","Another day","Another week","Another month","Another year"]
     jawaban = pickRandom(Apa)
     capt = 'Pertanyaan : Kapankah ' + value 
     capt += '\nJawaban : ' + No + ' ' + jawaban
@@ -750,7 +750,7 @@ break
           ffmpeg(media) 
           .on("error", (e) => { 
             console.log(e); 
-            client.sendMessage(from, "Terjadi kesalahan", "conversation", { quoted: mek }); 
+            client.sendMessage(from, "There is an error", "conversation", { quoted: mek }); 
             fs.unlinkSync(media); 
             })
             .on("end", () => { 
@@ -798,7 +798,7 @@ break
           ffmpeg(media)
             .on("error", (e) => {
               console.log(e);
-              client.sendMessage(from, "Terjadi kesalahan", "conversation", {
+              client.sendMessage(from, "There is an error", "conversation", {
                 quoted: mek,
               });
               fs.unlinkSync(media);
@@ -834,7 +834,7 @@ break
             .save(out);
         } else {
           m.reply(
-            `Kirim gambar dengan caption ${prefix}stiker, untuk video durasi kurang dari *7 detik*`
+            `Send an image with the caption ${prefix}sticker, for videos less than *7 seconds long*`
           );
         }
         break
@@ -1401,7 +1401,7 @@ case 'nightcore':
    capt += minggu.data.isi.love + '\n\n'
    capt += minggu.data.isi.keuangan
    thumb = await getBuffer(minggu.data.thumb)
-   client.adReply(from, capt, text, 'Zodiak Mingguan', tanggal, thumb, linkIg)
+   client.adReply(from, capt, text, 'Weekly Zodiac', tanggal, thumb, linkIg)
    break
 
  case 'zodiakharian':
@@ -1412,7 +1412,7 @@ case 'nightcore':
    capt += harian.isi.love + '\n\n'
    capt += harian.isi.keuangan
    thumb = await getBuffer(harian.thumb)
-   client.adReply(from, capt, text, 'Zodiak Harian', tanggal, thumb, linkIg)
+   client.adReply(from, capt, text, 'Daily Zodiac', tanggal, thumb, linkIg)
    break
  
 case 'joox':
@@ -1443,13 +1443,13 @@ case 'joox':
      capt += "\n________________________\n\n"
      capt += '*Title* : ' + video.title
      capt += '\n*Link* : ' + video.url
-     capt += '\n*Durasi* : ' + video.timestamp
+     capt += '\n*Duration* : ' + video.timestamp
      capt += '\n*Upload* : ' + video.ago
    })
    capt += ''
    await client.adReply(from, capt, text, 'YT Search : ' + value, tanggal, thumb, link[0].url)
    } catch {
-     return m.reply('Musik tidak ditemukan')
+     return m.reply('Music not found')
    }
   break
 
@@ -1495,7 +1495,7 @@ Judul : ${link[1].title}
 
 *Download 3*
 Judul : ${link[2].title}` 
- client.send3ButtonLoc(from, thumb, musik, 'Pilih lagu yang akan di download', 'Download 1', prefix + 'ytmp3 ' + link[0].url, 'Download 2', prefix + 'ytmp3 ' + link[1].url, 'Download 3', prefix + 'ytmp3 ' + link[2].url)
+ client.send3ButtonLoc(from, thumb, musik, 'Select the song to download', 'Download 1', prefix + 'ytmp3 ' + link[0].url, 'Download 2', prefix + 'ytmp3 ' + link[1].url, 'Download 3', prefix + 'ytmp3 ' + link[2].url)
  break
 
  case 'ytmp3':
@@ -1624,7 +1624,7 @@ Judul : ${link[2].title}`
     if(!value) return
     join = value.split('https://chat.whatsapp.com/')[1]
     await client.acceptInvite(join).then((res) => {
-      client.sendMessage(res.gid,`Hai 👋🏻\n@${sender.split("@")[0]} Mengundang ku untuk masuk ke dalam Group`, text, {contextInfo:{mentionedJid:[sender]}})
+      client.sendMessage(res.gid,`Hai 👋🏻\n@${sender.split("@")[0]} Invite me to join the Group`, text, {contextInfo:{mentionedJid:[sender]}})
       m.reply(`Succses Join Group!`)
       }).catch((err) => m.reply("‣ "+jsonformat(err)))
     break
@@ -1644,17 +1644,17 @@ Judul : ${link[2].title}`
    try {
 	      ppimg = await client.getProfilePicture(siapa);
 	    } catch {
-	      ppimg = 'https://telegra.ph/file/7c0b1068736040b515d81.jpg';
+	      ppimg = 'https://telegra.ph/file/bec2e2fa8bb6a7067c1af.jpg';
 	    }
 	 Prema = cekPremium(siapa) ? 'Yes' : 'No'
    capt = '*PROFILE*\n\n'
-   capt += '*Nomor* : ' + siapa.split('@')[0]
-   capt += '\n*Nama* : ' + pushname
+   capt += '*Number* : ' + siapa.split('@')[0]
+   capt += '\n*Name* : ' + pushname
    capt += '\n*Bio* : ' + about
    capt += '\n*Premium* : ' + Prema
-   capt += '\n*Bahasa* : ' + cekBahasa(siapa)
+   capt += '\n*Language* : ' + cekBahasa(siapa)
    capt += '\n*Level* : ' + cekLevel(siapa)
-   capt += '\n*Poin* : ' + cekPoin(siapa)
+   capt += '\n*Points* : ' + cekPoin(siapa)
    capt += '\n*Warning* : ' + cekWarn(siapa)
    client.adReply(from, capt, text, 'Profile from database', tanggal, thumb, linkIg, mek)
    break
@@ -1677,14 +1677,14 @@ Judul : ${link[2].title}`
      buff = await getBuffer(fotoProf)
      capt = '*Id* : ' + id 
      capt += owner ? '\n*Owner* : @' + owner.split('@')[0] : '\n*Owner* : -'
-     capt += '\n*Nama* : ' + subject 
-     capt += '\n*Dibuat* : ' + formatDate(creation * 1000)
-     capt += '\n*Jumlah Member* : ' + size 
-     capt += desc ? '\n*Deskripsi* : ' + desc : '\n*Deskripsi* : -'
-     capt += '\n*Id Deskripsi* : ' + descId 
-     capt += descOwner ? '\n*Deskripsi diubah oleh* : @' +  descOwner.split("@")[0] : '\n*Deskripsi diubah oleh* : -'
+     capt += '\n*Name* : ' + subject 
+     capt += '\n*Created* : ' + formatDate(creation * 1000)
+     capt += '\n*Number of Members* : ' + size 
+     capt += desc ? '\n*Description* : ' + desc : '\n*Description* : -'
+     capt += '\n*Id Description* : ' + descId 
+     capt += descOwner ? '\n*Description modified by* : @' +  descOwner.split("@")[0] : '\n*Description modified by* : -'
      capt += descTime ? '\n*Tanggal* : ' + formatDate(descTime * 1000) : '\n*Tanggal* : -' 
-     capt += '\n\n*Kontak tersimpan* : \n'
+     capt += '\n\n*Saved contacts* : \n'
           for (let y of participants) {
             capt += '- @' +  y.id.split("@")[0]
             capt += '\n'
@@ -1708,7 +1708,7 @@ break
    try {
 	      ppimg = await client.getProfilePicture(from);
 	    } catch {
-	      ppimg = 'https://telegra.ph/file/7c0b1068736040b515d81.jpg';
+	      ppimg = 'https://telegra.ph/file/bec2e2fa8bb6a7067c1af.jpg';
 	    }
    isAntilink = isAntilink ? 'Yes' : 'No' 
    isAntidelete = isAntidelete ? 'Yes' : 'No' 
@@ -1718,18 +1718,18 @@ break
    creation = moment(groupMetadata.creation * 1000).tz('Asia/Jakarta').format(`DD-MM-YYYY`)
    ownergc = groupMetadata.owner.split('@')[0]
    capt = 'GROUP INFORMATIONS\n\n'
-   capt += '*Nama* : ' + groupName
-   capt += '\n*Di buat pada* : ' + creation
+   capt += '*Name* : ' + groupName
+   capt += '\n*Made in* : ' + creation
    capt += '\n*Owner* : @' + ownergc
-   capt += '\n*Total Admin* : ' + groupAdmins.length
-   capt += '\n*Total Member* : ' + groupMembers.length
+   capt += '\n*Total Admin(s)* : ' + groupAdmins.length
+   capt += '\n*Total Member(s)* : ' + groupMembers.length
    capt += '\n\nGROUP SETTING'
    capt += '\n*Antilink* : ' + isAntilink
    capt += '\n*Antidelete* : ' + isAntidelete
    capt += '\n*Antiviewonce* : ' + isViewonce
    capt += '\n*Detected* : ' + isDetect
    capt += '\n*Welcome* : ' + isWelcome
-   capt += '\n\n*Deskripsi* : ' + groupDesc 
+   capt += '\n\n*Description* : ' + groupDesc 
    client.adReply(from, capt, text, groupName, tanggal, thumb, linkIg)
 break
  
@@ -1953,7 +1953,7 @@ break
     users = value.replace(/[^0-9]/g, '')+"@s.whatsapp.net"
     ini = await client.groupInviteCode(from)
     link = 'https://chat.whatsapp.com/'+ini 
-    client.sendMessage(users, "@"+sender.split("@")[0]+"\nMengundang mu untuk masuk kedalam group\n"+link, text, {
+    client.sendMessage(users, "@"+sender.split("@")[0]+"\nInviting you to join the group\n"+link, text, {
           contextInfo: {
             mentionedJid: [sender],
           }})
@@ -2080,7 +2080,7 @@ ${listVote}
 
 DEVOTE : ${devote.length}
 ${listDevote}`.trim()
-    await client.send3Button(from, caption, isWm, 'Vote', prefix + 'vote', 'Devote', prefix + 'devote', 'Cek Voting', prefix + 'cekvote', false, { contextInfo: { mentionedJid: client.parseMention(caption) } })
+    await client.send3Button(from, caption, isWm, 'Vote', prefix + 'vote', 'Devote', prefix + 'devote', 'Check Voting', prefix + 'checkvote', false, { contextInfo: { mentionedJid: client.parseMention(caption) } })
     break
 
 
@@ -2104,7 +2104,7 @@ ${listVote}
 
 Devote : ${devote.length}
 ${listDevote}`.trim()
-    await client.send3Button(from, caption, isWm, 'Vote', prefix + 'vote', 'Devote', prefix + 'devote', 'Hapus Voting', prefix + 'delvote', false, { contextInfo: { mentionedJid: client.parseMention(caption) } })
+    await client.send3Button(from, caption, isWm, 'Vote', prefix + 'vote', 'Devote', prefix + 'devote', 'Delete Vote', prefix + 'delvote', false, { contextInfo: { mentionedJid: client.parseMention(caption) } })
 break
 
  case 'absenstart':
@@ -2531,12 +2531,12 @@ fungsi = `
    tag = '@'+sender.split('@')[0]
    if(value.toLowerCase() === 'welcome') {
      capt = welc.replace('@tag', tag).replace('@nama', pushname).replace('@about', about).replace('@tanggal', tanggal).replace('@group', groupName)
-     client.adReply(from, capt, text, 'Selamat datang member baru', 'Member ke ' + groupMembers.length + ' Group ' + groupName, thumb, linkIg);
+     client.adReply(from, capt, text, 'Welcome new member', 'Member to ' + groupMembers.length + ' Group ' + groupName, thumb, linkIg);
      } else if(value.toLowerCase() === 'bye') {
        capt = bye.replace('@tag', tag).replace('@nama', pushname).replace('@about', about).replace('@tanggal', tanggal).replace('@group', groupName)
        m.reply(capt)
      } else {
-       m.reply('List Simulasi\n\n- Welcome\n- Bye')
+       m.reply('Simulation List\n\n- Welcome\n- Bye')
      }
   break
 
@@ -2616,7 +2616,7 @@ if (isVoiceCommand && type === "audioMessage"){
     form.append('audio', stream);
     const UrL = await requests('http://hujanapi.xyz/api/stt?apikey=' + hujanapi, { method: 'POST', body: form })
     const ret =  await UrL.json()
-    const voiceMsg = ret.result ? ret.result : 'Tidak terdeteksi'
+    const voiceMsg = ret.result ? ret.result : 'Not detected'
     m.reply('Reading Voicee : ' + voiceMsg)
     const VoiceCommand = voiceMsg.trim().split(/ +/).shift().toLowerCase();
     const argsVn = voiceMsg.trim().split(/ +/).slice(1);
@@ -2647,10 +2647,10 @@ switch(VoiceCommand) {
   
   case 'apakah':
     if(!valueVn) return
-    apa = ['Tidak', 'Iya', 'Mungkin']
+    apa = ['No', 'Yes', 'Maybe']
     jawaban = pickRandom(apa)
-    capt = 'Pertanyaan : Apakah ' + value 
-    capt += '\nJawaban : ' + jawaban 
+    capt = 'Question: Is ' + value 
+    capt += '\nAnswer : ' + jawaban 
     m.reply(capt)
   break
 
@@ -2673,10 +2673,10 @@ switch(VoiceCommand) {
   case 'kapankah':
     if(!valueVn) return
     No = Math.floor(Math.random() * 30)
-    Apa = ["Jam lagi","Hari lagi","Minggu lagi","Bulan lagi","Tahun lagi"]
+    Apa = ["Another hour","Another day","Another week","Another month","Another year"]
     jawaban = pickRandom(Apa)
-    capt = 'Pertanyaan : Kapankah ' + value 
-    capt += '\nJawaban : ' + No + ' ' + jawaban
+    capt = 'Question: When ' + value 
+    capt += '\nAnswer : ' + No + ' ' + jawaban
     m.reply(capt)
   break
   
