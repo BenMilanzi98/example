@@ -1486,15 +1486,15 @@ case 'joox':
   // img = await getBuffer(link[0].thumb)
    musik = `*MUSIK PLAYER*
 
-3 Lagu di temukan..
+3 songs found..
 *Download 1*
-Judul : ${link[0].title}
+Title : ${link[0].title}
 
 *Download 2*
-Judul : ${link[1].title}
+Title : ${link[1].title}
 
 *Download 3*
-Judul : ${link[2].title}` 
+Title : ${link[2].title}` 
  client.send3ButtonLoc(from, thumb, musik, 'Select the song to download', 'Download 1', prefix + 'ytmp3 ' + link[0].url, 'Download 2', prefix + 'ytmp3 ' + link[1].url, 'Download 3', prefix + 'ytmp3 ' + link[2].url)
  break
 
@@ -1511,7 +1511,7 @@ Judul : ${link[2].title}`
      })
    } else {
      img = await getBuffer(res.thumb)
-     capt = 'Kualitas : ' + res.quality
+     capt = 'Quality : ' + res.quality
      capt += '\nSize : ' + res.size
      client.adReplyAudio(from, buff, document, res.judul, capt, img, value)
    }
